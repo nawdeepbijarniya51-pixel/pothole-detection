@@ -42,6 +42,17 @@ AI-powered pothole detection and segmentation system using YOLOv8.
 
 ## Deployment
 
+### Frontend (Vercel)
+- **Important:** Deploy only the **frontend** on Vercel. The FastAPI + YOLO backend must run on a host that supports Docker or long-running Python (e.g. Render, Railway, Fly.io, a VPS)—not as a typical Vercel serverless app.
+- In Vercel: **Import** your Git repo → set **Root Directory** to `frontend`.
+- **Framework Preset:** Vite (or Other with Build `npm run build`, Output `dist`).
+- **Environment variable (Production + Preview):**
+  - `VITE_API_URL` = `https://YOUR_BACKEND_DOMAIN` (no trailing slash)
+- On your **backend**, set CORS to your Vercel URL:
+  - `POTHOLEVISION_ALLOWED_ORIGINS=https://your-app.vercel.app`
+  - If you use a custom domain, add that URL too (comma-separated).
+- `frontend/vercel.json` includes SPA rewrites so React Router works on refresh.
+
 ### Frontend (Netlify)
 - **Build settings**
   - Base directory: `frontend`
@@ -53,7 +64,7 @@ AI-powered pothole detection and segmentation system using YOLOv8.
 ### Backend (Docker host: Render/Fly/Railway/VPS)
 - A `backend/Dockerfile` is included.
 - Set **CORS** in production:
-  - `POTHOLEVISION_ALLOWED_ORIGINS=https://YOUR_NETLIFY_DOMAIN`
+  - `POTHOLEVISION_ALLOWED_ORIGINS=https://YOUR_FRONTEND_DOMAIN` (Vercel or Netlify URL)
 
 
 ## Features
