@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 14% 8%;
+    --foreground: 45 10% 85%;
+
+    --card: 220 12% 11%;
+    --card-foreground: 45 10% 85%;
+
+    --popover: 220 12% 11%;
+    --popover-foreground: 45 10% 85%;
+
+    --primary: 45 100% 50%;
+    --primary-foreground: 220 14% 8%;
+
+    --secondary: 220 10% 16%;
+    --secondary-foreground: 45 10% 85%;
+
+    --muted: 220 10% 14%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 220 14% 8%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 10% 18%;
+    --input: 220 10% 18%;
+    --ring: 45 100% 50%;
+
+    --radius: 0.5rem;
+
+    --neon-green: 120 100% 50%;
+    --neon-yellow: 45 100% 50%;
+    --neon-amber: 38 92% 50%;
+    --severity-low: 45 100% 50%;
+    --severity-medium: 30 100% 50%;
+    --severity-high: 0 72% 50%;
+
+    --sidebar-background: 220 12% 11%;
+    --sidebar-foreground: 45 10% 85%;
+    --sidebar-primary: 45 100% 50%;
+    --sidebar-primary-foreground: 220 14% 8%;
+    --sidebar-accent: 220 10% 16%;
+    --sidebar-accent-foreground: 45 10% 85%;
+    --sidebar-border: 220 10% 18%;
+    --sidebar-ring: 45 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer utilities {
+  .font-mono-display {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .glow-yellow {
+    text-shadow: 0 0 10px hsl(45 100% 50% / 0.5), 0 0 20px hsl(45 100% 50% / 0.2);
+  }
+
+  .glow-box {
+    box-shadow: 0 0 15px hsl(45 100% 50% / 0.15), 0 0 30px hsl(45 100% 50% / 0.05);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 10px hsl(120 100% 50% / 0.3);
+  }
+
+  .border-glow {
+    border-color: hsl(45 100% 50% / 0.3);
+  }
+
+  .bg-grid {
+    background-image: 
+      linear-gradient(hsl(220 10% 18% / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 10% 18% / 0.5) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}

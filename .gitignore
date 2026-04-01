@@ -1,0 +1,31 @@
+__pycache__/
+*.py[cod]
+*.log
+
+# Python virtualenvs
+.venv/
+venv/
+ENV/
+
+# Model files (don't commit large binaries)
+*.pt
+
+# Temp / output
+*.tmp
+*.temp
+tmp/
+temp/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Node (frontend has its own .gitignore too)
+node_modules/
+dist/
+
+# Template artifacts (prevent nested git issues)
+frontend/.workspace/
+
